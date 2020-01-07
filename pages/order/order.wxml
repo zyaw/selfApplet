@@ -1,0 +1,12 @@
+<!-- order.wxml -->
+<view class="">
+  <view>
+    <!-- 列表 -->
+    <view class='view-ul'>
+      <view wx:for="{{dataList}}" wx:key='index'>
+        {{item.name}}
+        <image src='{{item.picUrl}}'></image>
+      </view>
+    </view>
+  </view>
+</view>

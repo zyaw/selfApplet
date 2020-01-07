@@ -1,0 +1,56 @@
+<!-- index.wxml -->
+<view class="container">
+  <!-- 头像 -->
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      获取头像昵称
+    </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <!-- 原生弹窗 -->
+  <view class="click-popup">
+    <button bindtap="showBtn">弹窗</button>
+  </view>
+  <view class="click-popup">
+    <button bindtap="showModal">弹窗modal</button>
+  </view>
+  <modal hidden="{{hiddenmodalput}}" title="完善资料" confirm-text="提交" cancel-text="取消" bindcancel="cancelM" bindconfirm="confirmM">
+    <input bindinput='iName' type='text' placeholder="请输入姓名..." auto-focus />
+    <input bindinput='iPhoneNum' type='number' placeholder="请输入手机号码..." />
+  </modal>
+  <!-- TODO 自定义组件 -->
+  <!-- 弹窗 -->
+  <!-- modal弹窗 -->
+  <view class="">
+    <view class="">
+      <button bindtap="showPopup">自定义弹窗</button>
+    </view>
+    <popup show="{{showModals}}" bindcancel="modalCancel" bindconfirm='modalConfirm' single='{{single}}'>
+      <view class='modal-content'>
+        <scroll-view scroll-y class='main-content'>
+          <view>这里面可替换成你想显示的其他内容</view>
+          <view>这里面可替换成你想显示的其他内容</view>
+          <text>这里面可替换成你想显示的其他内容</text>
+        </scroll-view>
+      </view>
+    </popup>
+  </view>
+  <!-- 底部弹窗 -->
+  <view class="popup-bottom">
+    <view class="">
+      <button bindtap="handleShow">{{checkValue}}</button>
+    </view>
+    <popupB id='popupBottom' myVisible="{{visible}}" bind:myevent='onMyEvent' optionList='{{bottomlist}}'></popupB>
+  </view>
+  <view>
+    <navigator class="index-intro__btn btn btn-danger btn-md" url='/pages/order/order'>
+      进入商城列表
+    </navigator>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

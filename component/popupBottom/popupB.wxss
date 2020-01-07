@@ -1,0 +1,32 @@
+.arrow {
+  display: inline-block;
+  border: 6px solid transparent;
+  border-top-color: #000;
+  margin-left: 8px;
+  position: relative;
+  top: 6rpx;
+}
+
+
+/* 底部弹出框 */
+.bottom-positon {
+  text-align: center;
+}
+
+.Mselect {
+  margin-bottom: 20rpx;
+}
+
+.Mselect view {
+  padding: 26rpx 0;
+  background: #fff;
+}
+
+.Mselect view:not(:last-of-type) {
+  border-bottom: 1px solid #dfdede;
+}
+
+.Mcancel {
+  background: #fff;
+  padding: 26rpx 0;
+}
