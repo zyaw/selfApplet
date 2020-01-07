@@ -1,17 +1,24 @@
-.arrow {
-  display: inline-block;
-  border: 6px solid transparent;
-  border-top-color: #000;
-  margin-left: 8px;
-  position: relative;
-  top: 6rpx;
-}
-
-
 /* 底部弹出框 */
 .bottom-positon {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  overflow: hidden;
   text-align: center;
+  width: 100%;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  transition: transform .3s, -webkit-transform .3s;
 }
+
+.anitoggle {
+  transform: translate(0);
+  transform: translate(0);
+}
+
 
 .Mselect {
   margin-bottom: 20rpx;
@@ -19,6 +26,7 @@
 
 .Mselect view {
   padding: 26rpx 0;
+  box-sizing: border-box;
   background: #fff;
 }
 
@@ -29,4 +37,5 @@
 .Mcancel {
   background: #fff;
   padding: 26rpx 0;
+  box-sizing: border-box;
 }

@@ -1,6 +1,5 @@
 /**app.wxss**/
-@import "component/popup/popup.wxss";
-@import "component/popupBottom/popupB.wxss";
+@import "style/weui.wxss";
 
 .container {
   height: 100%;
@@ -12,31 +11,51 @@
 }
 
 /* ---------------------------- */
-/*模态框*/
-.modal {
+/*遮罩层*/
+.modal-mask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  z-index: 1000;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
-.modal-cancel {
-  position: absolute;
-  z-index: 9998;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.3);
+/* 全局元素显示隐藏样式 */
+.ele_hidden {
+  visibility: hidden;
+  opacity: 0;
+  /* 动画展示时间 */
+  transition: all .3s;
 }
 
-.bottom-dialog-body {
+.ele_show {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.wsheet {
+  position: fixed;
+  left: 0;
   width: 100%;
-  position: absolute;
-  z-index: 9999;
-  bottom: 0;
-  left: 0;
-  background: #dfdede;
+  text-align: center;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  height: 100vh;
+
+}
+
+.animotion_toggle {
+  transform: translate(0);
+  transform: translate(0);
+  display: inline-block;
+  opacity: 1;
 }

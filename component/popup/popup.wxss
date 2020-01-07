@@ -1,26 +1,24 @@
 /* components/modal/modal.wxss */
-/*遮罩层*/
-.modal-mask {
+/* 弹层内容居中 */
+.popup {
   display: flex;
   justify-content: center;
+  height: 100%;
   align-items: center;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  height: 100%;
+}
+
+.red-tex {
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
 }
 
 /*遮罩内容*/
 .modal-content {
   display: flex;
   flex-direction: column;
-  width: 80%;
   background-color: #fff;
   border-radius: 10rpx;
-  padding: 20rpx;
   text-align: center;
 }
 
@@ -30,6 +28,8 @@
   height: 100%;
   overflow-y: hidden;
   max-height: 80vh;
+  padding: 20rpx;
+  box-sizing: border-box;
   /* 内容高度最高80vh 以免内容太多溢出*/
 }
 
@@ -37,8 +37,6 @@
 .modal-footer {
   display: flex;
   flex-direction: row;
-  height: 80rpx;
-  line-height: 80rpx;
   border-top: 2rpx solid #D2D3D5;
   margin-top: 30rpx;
 }

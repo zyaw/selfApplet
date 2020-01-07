@@ -28,7 +28,7 @@
     <view class="">
       <button bindtap="showPopup">自定义弹窗</button>
     </view>
-    <popup show="{{showModals}}" bindcancel="modalCancel" bindconfirm='modalConfirm' single='{{single}}'>
+    <popup class="modal-mask ele_hidden  {{showModals?'ele_show':''}}" bindtap="modalCancel" bindcancel="modalCancel" bindconfirm='modalConfirm' single='{{single}}'>
       <view class='modal-content'>
         <scroll-view scroll-y class='main-content'>
           <view>这里面可替换成你想显示的其他内容</view>
@@ -43,7 +43,7 @@
     <view class="">
       <button bindtap="handleShow">{{checkValue}}</button>
     </view>
-    <popupB id='popupBottom' myVisible="{{visible}}" bind:myevent='onMyEvent' optionList='{{bottomlist}}'></popupB>
+    <popupB id='popupBottom' myVisible='{{visible}}' bind:myevent='onMyEvent' bindtap="modalBCancel" optionList='{{bottomlist}}'></popupB>
   </view>
   <view>
     <navigator class="index-intro__btn btn btn-danger btn-md" url='/pages/order/order'>

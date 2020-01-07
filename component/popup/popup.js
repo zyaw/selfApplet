@@ -1,4 +1,5 @@
 Component({
+  options: {styleIsolation: 'apply-shared'},
   /**
    * 组件的属性列表
    */
@@ -6,13 +7,23 @@ Component({
     //是否显示modal弹窗
     show: {
       type: Boolean,
-      value: false
+      value: true
+    },
+     //是否显示modal标题
+     isTitle: {
+      type: Boolean,
+      value: true
+    },
+    popupTitle:{
+      type: String,
+      value: '通知'
     },
     //控制底部是一个按钮还是两个按钮，默认两个
     single: {
       type: Boolean,
       value: false
-    }
+    },
+    
   },
 
   /**
