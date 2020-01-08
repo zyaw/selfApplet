@@ -45,8 +45,12 @@
     </view>
     <popupB id='popupBottom' myVisible='{{visible}}' bind:myevent='onMyEvent' bindtap="modalBCancel" optionList='{{bottomlist}}'></popupB>
   </view>
-  <tabbar tabbar="{{tabbar}}"></tabbar>
   <view class='iconfont icon-chenggong'></view>
+  <view class="">
+    <navigator class="index-intro__btn btn btn-danger btn-md" url='/pages/login/login'>
+      登陆
+    </navigator>
+  </view>
   <view>
     <navigator class="index-intro__btn btn btn-danger btn-md" url='/pages/order/order'>
       进入商城列表

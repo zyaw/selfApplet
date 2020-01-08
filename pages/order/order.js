@@ -1,6 +1,6 @@
 import {
   getOrgList
-} from '../../api/user.js';
+} from '../../api/order.js';
 Page({
   data: {
     dataList: [],

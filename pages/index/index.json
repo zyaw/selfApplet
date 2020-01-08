@@ -1,7 +1,6 @@
 {
   "usingComponents": {
     "popup": "/component/popup/popup",
-    "popupB": "/component/popupBottom/popupB",
-    "tabbar": "/component/tabBar/tabbar"
+    "popupB": "/component/popupBottom/popupB"
   }
 }

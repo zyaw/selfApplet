@@ -1,84 +1,81 @@
 // login.js
 const app = getApp()
+import {
+  getLogin
+} from '../../api/login'
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     disabled: false,
-    no: '',
+    account: '',
     pwd: '',
-    noinput: false,
+    accountinput: false,
     pwdinput: false
   },
-  noinput: function (e) {
-    this.setData({no: e.detail.value})
-    this.setData({noinput: true})
-    if (this.data.noinput == true && this.data.pwdinput == true) {
-      this.setData({ disabled: false })
+  accountinput: function (e) {
+    this.setData({
+      account: e.detail.value,
+      accountinput: true
+
+    })
+    if (this.data.accountinput == true && this.data.pwdinput == true) {
+      this.setData({
+        disabled: false
+      })
     }
   },
   pwdinput: function (e) {
-    this.setData({ pwd: e.detail.value })
-    this.setData({ pwdinput: true })
-    if (this.data.noinput == true && this.data.pwdinput == true) {
-      this.setData({ disabled: false })
+    this.setData({
+      pwd: e.detail.value,
+      pwdinput: true
+    })
+    if (this.data.accountinput == true && this.data.pwdinput == true) {
+      this.setData({
+        disabled: false
+      })
     }
   },
+  //登陆
   formSubmit: function (e) {
-    wx.showLoading({
-      title: '登录中...'
-    })
     console.log(e)
-    this.setData({ disabled: true})
-    wx.request({
-      url: app.globalData.url.login, // 仅为示例，并非真实的接口地址
-      data: {
-        no: e.detail.value.no,
-        pwd: e.detail.value.pwd
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        console.log(res)
-        if (res.statusCode == 200) {
-          if (res.data.error == true) {
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'none',
-              duration: 2000
-            })
-          } else {
-            wx.setStorageSync('student', res.data.data)
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'success',
-              duration: 2000
-            })
-            setTimeout(function () {
-              wx.switchTab({
-                url: '../teacher/teacher'
-              })
-            }, 2000)
-          }
-        }else {
-          wx.showToast({
-            title: '服务器出现错误',
-            icon: 'none',
-            duration: 2000
+    this.setData({
+      disabled: true
+    })
+    let prame = {
+      union_id: 'o9GhT56gxQvKdxp7IQyNNSN40O54',
+      phone: e.detail.value.account,
+      content: e.detail.value.pwd
+    }
+    getLogin({
+      prame
+    }).then((res) => {
+      debugger
+      if (res.status == 0) {
+        wx.showToast({
+          title: "‘通知",
+          icon: 'success',
+          duration: 2000
+        })
+        setTimeout(function () {
+          wx.switchTab({
+            url: '../index/index'
           })
-        }
+        }, 2000)
       }
     })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({disabled: false})
+    this.setData({
+      disabled: false
+    })
     var student = wx.getStorageSync('student')
-    if (typeof (student) == 'object' && student.no != '' && student.classid != '') {
+    if (typeof (student) == 'object' && student.account != '' && student.classid != '') {
       wx.switchTab({
         url: '../teacher/teacher'
       })
@@ -94,10 +91,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (this.data.no == '' || this.data.pwd == '') {
-      this.setData({ disabled: true })
-    }else {
-      this.setData({ disabled: false })
+    if (this.data.account == '' || this.data.pwd == '') {
+      this.setData({
+        disabled: true
+      })
+    } else {
+      this.setData({
+        disabled: false
+      })
     }
   },
 

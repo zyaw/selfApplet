@@ -3,15 +3,13 @@
   <view class="login-from">
     <form bindsubmit="formSubmit" class='form'>
       <view class="myno">
-        <!-- 学号 -->
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__bd">
-            <input class="weui-input" name="no" bindinput="noinput" value='{{no}}' placeholder="请输入学号" />
+            <input class="weui-input" name="account" bindinput="accountinput" value='{{account}}' placeholder="请输入账号" />
           </view>
         </view>
       </view>
       <view class="mypwd">
-        <!-- 密码 -->
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__bd">
             <input class="weui-input" type="password" name="pwd" bindinput="pwdinput" placeholder="请输入密码" value='{{pwd}}' />
