@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/order/order",
+    "pages/login/login",
     "pages/logs/logs"
   ],
   "window": {
@@ -10,5 +11,30 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "服务",
+        "iconPath": "static/img/xihuan.png",
+        "selectedIconPath": "static/img/xihuanfill.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "活动",
+        "iconPath": "static/img/biaoxing.png",
+        "selectedIconPath": "static/img/biaoxingfill.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "我发起的",
+        "iconPath": "static/img/yonghu.png",
+        "selectedIconPath": "static/img/yonghufill.png"
+      }
+    ],
+    "color": "#333",
+    "selectedColor": "#f7982a",
+    "backgroundColor": "#f6f6f6",
+    "borderStyle": "white"
+  }
 }

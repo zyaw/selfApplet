@@ -1,5 +1,6 @@
 /**app.wxss**/
-@import "style/weui.wxss";
+@import "static/weui.wxss";
+@import "static/icon/iconfont.wxss";
 
 .container {
   height: 100%;
@@ -35,27 +36,5 @@
 
 .ele_show {
   visibility: visible;
-  opacity: 1;
-}
-
-
-.wsheet {
-  position: fixed;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  display: none;
-  visibility: hidden;
-  opacity: 0;
-  height: 100vh;
-
-}
-
-.animotion_toggle {
-  transform: translate(0);
-  transform: translate(0);
-  display: inline-block;
   opacity: 1;
 }

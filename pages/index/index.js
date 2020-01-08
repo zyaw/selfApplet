@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
 Page({
   data: {
     motto: 'Hello World',
@@ -14,7 +14,8 @@ Page({
     visible: false, // 显示底部modal弹窗
     bottomlist: ['text-1', 'text-12'],
     showModals: false, // 显示modal弹窗
-    single: false // false 只显示一个按钮，如果想显示两个改为true即可
+    single: false, // false 只显示一个按钮，如果想显示两个改为true即可,
+    tabbar: {}
   },
   //事件处理函数
   bindViewTap: function () {
@@ -177,7 +178,8 @@ Page({
     })
   },
   //底部弹窗 end
-
+  onLoad: function (options) {
+  },
 
 
   getUserInfo: function (e) {
