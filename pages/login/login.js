@@ -51,7 +51,6 @@ Page({
     getLogin({
       prame
     }).then((res) => {
-      debugger
       if (res.status == 0) {
         wx.showToast({
           title: "‘通知",
@@ -63,6 +62,12 @@ Page({
             url: '../index/index'
           })
         }, 2000)
+      } else {
+        wx.showToast({
+          title: "shibai",
+          icon: 'success',
+          duration: 2000
+        })
       }
     })
   },
